@@ -11,6 +11,7 @@
 * Установить модуль Farebase npm i @angular/fare
 * Перейти к папке personal-diary в терминале
 * Запустить команду ng serve
+
 Также приложение выложено на github-pages: https://eugene2000.github.io/personal-diary/
 
 Еще не реализовано:
