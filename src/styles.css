@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    background: var(--main-bg-color); /* Цвет фона */
+    color: black; /* Цвет текста */
+    --main-bg-color: #FFF1F1;
+    --field-bg-color: #F9CFCF;
+    --text-bg-color: #FFFEFE;
+    --field-bor-radius: 26px;
+    --text-bor-radius: 20px;
+    --field-padding: 2%;
+    font-family: 'Just Another Hand', cursive; /*шрифт*/
+}
+
+.app-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

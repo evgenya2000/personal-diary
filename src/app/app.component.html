@@ -1,0 +1,22 @@
+<div class="header"><div header-text>Personal diary</div></div>
+<div class="add-note">
+  <!--input #newNote placeholder="Text write here"-->
+  <textarea #newNote placeholder="Text write here"></textarea> 
+  <div class="buttons">
+    <button class="add-image">Add image</button>
+    <button class="save" (click)="addNotes(newNote.value)" class="save" >Save</button>
+  </div>
+</div>
+
+<div class="notes" *ngFor="let note of notes">
+  <div class="text-notes">
+    <p>{{note.text}}</p>
+  </div>
+  
+  <div class="additional-buttons">
+    <div class="date">{{note.date.seconds*1000 | date}}</div>
+    <button class="edit">Edit</button>
+    <button class="delete" (click)="deleteNotes(note.id)">Delete</button>
+  </div>
+  
+</div>

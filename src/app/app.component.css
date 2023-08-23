@@ -1,0 +1,89 @@
+.header {
+    font-size: 700%;
+    background: var(--field-bg-color);
+    text-align: center;
+    width: 50%;
+    border-radius: var(--field-bor-radius);
+    margin: 2% auto;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.add-note {
+    background-color: var(--field-bg-color);
+    margin: 1% auto;
+    border-radius: var(--field-bor-radius);
+    display: flex;
+    width: 80%; 
+    padding: var(--field-padding);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    flex-grow: 1;
+}
+
+textarea {
+    padding: 2%;
+    border-radius: var(--text-bor-radius);
+    background-color: var(--text-bg-color);
+    margin-right: 2%;
+    font-size: 200%;
+    flex-grow:7;
+    resize: vertical; 
+}
+
+textarea, textarea::placeholder, button {
+    font-family: 'Just Another Hand', cursive;
+    border: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow:1;
+}
+
+.add-image, .save {
+    font-size: 200%;
+    width: 100%;
+    padding: 2%;
+}
+
+button {
+    background-color: var(--main-bg-color);
+    border-radius: var(--text-bor-radius);
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--field-bg-color);
+    font-size: 200%;
+    margin: 1% auto;
+    padding: var(--field-padding);
+    border-radius: var(--field-bor-radius);
+    width: 80%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.text-notes {
+    background-color: var(--text-bg-color);
+    border-radius: var(--text-bor-radius);
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+.date {
+    background-color: var(--main-bg-color);
+    border-radius: var(--text-bor-radius);
+    padding: 1%;
+}
+
+.additional-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit, .delete {
+    font-size: 100%;
+    width: 10%;
+}
