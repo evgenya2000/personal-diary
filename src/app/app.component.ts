@@ -8,18 +8,19 @@ import { SharedService } from './shared.service';
 })
 export class AppComponent {
 
-  constructor(private service:SharedService){}
+  constructor(private service: SharedService) {}
 
-  notes:any=[];
-  
+  notes: any = [];
+  selectedImage: File | null = null;
+
   // метод обновления note array
-  refreshNotes(){
-    this.service.getNotes().subscribe((res)=>{
+  refreshNotes() {
+    this.service.getNotes().subscribe((res) => {
       // Сортировка массива записей по полю `date`
       res.sort((a, b) => {
         const dateA = a["date"];
         const dateB = b["date"];
-        
+
         if (dateA > dateB) {
           return -1;
         } else if (dateA < dateB) {
@@ -30,24 +31,31 @@ export class AppComponent {
       });
 
       this.notes = res;
-    })
+    });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.refreshNotes();
   }
 
   // Метод добавления новых записей
-  addNotes(newNotes:string){
-    this.service.addNote(newNotes).then(()=>{
-      this.refreshNotes();
-    })
-  }
+// Метод добавления новых записей
+addNotes(newNotes: string, file: File | null) {
+  this.service.addNote(newNotes, file).then(() => {
+    this.refreshNotes();
+    this.selectedImage = null; // Сброс выбранного изображения после добавления записи
+  });
+}
 
   // Метод удаления записей
-  deleteNotes(id:string){
-    this.service.deleteNote(id).then(()=>{
+  deleteNotes(id: string) {
+    this.service.deleteNote(id).then(() => {
       this.refreshNotes();
-    })
+    });
+  }
+
+  // Обработчик события выбора изображения
+  onImageSelected(event: any) {
+    this.selectedImage = event.target.files[0];
   }
 }
