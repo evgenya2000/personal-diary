@@ -72,6 +72,17 @@ button {
     margin-bottom: 2%;
 }
 
+.image-div {
+    border-radius: var(--text-bor-radius);
+    margin-bottom: 2%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--text-bor-radius);
+}
+
 .date {
     background-color: var(--main-bg-color);
     border-radius: var(--text-bor-radius);
