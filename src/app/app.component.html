@@ -12,12 +12,15 @@
 </div>
 
 <div class="notes" *ngFor="let note of notes">
-  <div class="text-notes" *ngIf="note.text">
-    <p>{{note.text}}</p>
+  <div class="content">
+    <div class="text-notes" *ngIf="note.text">
+      <p>{{note.text}}</p>
+    </div>
+    <div class="image-div" *ngIf="note.image">
+      <img class="image" [src]="note.image" alt="Note image">
+    </div>
   </div>
-  <div class="image-div" *ngIf="note.image">
-    <img class="image" [src]="note.image" alt="Note image">
-  </div>
+  
   <div class="additional-buttons">
     <div class="date">{{note.date.seconds*1000 | date}}</div>
     <button class="edit">Edit</button>
