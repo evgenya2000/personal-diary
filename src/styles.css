@@ -9,6 +9,7 @@
     background: var(--main-bg-color); /* Цвет фона */
     color: black; /* Цвет текста */
     --main-bg-color: #FFF1F1;
+    --main-bg-color-shadow: #c0b1b1;
     --field-bg-color: #F9CFCF;
     --text-bg-color: #FFFEFE;
     --field-bor-radius: 26px;

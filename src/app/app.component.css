@@ -42,6 +42,12 @@ textarea, textarea::placeholder, button {
     flex-grow:1;
 }
 
+.image-add {
+    width: 30%;
+    margin-right: 2%;
+    border-radius: var(--text-bor-radius); 
+}
+
 .add-image, .save {
     font-size: 200%;
     width: 100%;
@@ -53,34 +59,46 @@ button {
     border-radius: var(--text-bor-radius);
 }
 
+button:active {
+    background-color: var(--main-bg-color-shadow);
+}
+
 .notes {
     display: flex;
     flex-direction: column;
     background-color: var(--field-bg-color);
     font-size: 200%;
-    margin: 1% auto;
+    margin: 2% auto;
     padding: var(--field-padding);
     border-radius: var(--field-bor-radius);
     width: 80%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    align-items: stretch;
+}
+
 .text-notes {
     background-color: var(--text-bg-color);
     border-radius: var(--text-bor-radius);
     padding: 2%;
-    margin-bottom: 2%;
+    width: 100%;
 }
 
 .image-div {
     border-radius: var(--text-bor-radius);
-    margin-bottom: 2%;
+    margin-left: 2%;
 }
 
 .image {
+    border-radius: var(--text-bor-radius);  
+    display: block;
+    margin: 0 auto; 
     width: 100%;
-    height: 100%;
-    border-radius: var(--text-bor-radius);
 }
 
 .date {
@@ -92,6 +110,7 @@ button {
 .additional-buttons {
     display: flex;
     justify-content: space-between;
+    margin-bottom: -1%;
 }
 
 .edit, .delete {

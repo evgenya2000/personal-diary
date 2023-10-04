@@ -12,6 +12,7 @@ export class AppComponent {
 
   notes: any = [];
   selectedImage: File | null = null;
+  imageUrl: any = null;
 
   // метод обновления note array
   refreshNotes() {
@@ -39,13 +40,12 @@ export class AppComponent {
   }
 
   // Метод добавления новых записей
-// Метод добавления новых записей
-addNotes(newNotes: string, file: File | null) {
-  this.service.addNote(newNotes, file).then(() => {
-    this.refreshNotes();
-    this.selectedImage = null; // Сброс выбранного изображения после добавления записи
-  });
-}
+  addNotes(newNotes: string, file: File | null) {
+    this.service.addNote(newNotes, file).then(() => {
+      this.refreshNotes();
+      this.selectedImage = null; // Сброс выбранного изображения после добавления записи
+    });
+  }
 
   // Метод удаления записей
   deleteNotes(id: string) {
@@ -57,5 +57,12 @@ addNotes(newNotes: string, file: File | null) {
   // Обработчик события выбора изображения
   onImageSelected(event: any) {
     this.selectedImage = event.target.files[0];
+    if(this.selectedImage){
+        const reader = new FileReader();
+        reader.readAsDataURL(this.selectedImage);
+        reader.onload = () => {
+        this.imageUrl = reader.result;
+      }
+    }
   }
 }

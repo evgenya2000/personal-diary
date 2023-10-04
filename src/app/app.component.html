@@ -4,6 +4,7 @@
 
 <div class="add-note">
   <textarea #newNote placeholder="Text write here"></textarea> 
+  <img class="image-add" *ngIf="selectedImage" [src]="imageUrl">
   <div class="buttons">
     <input type="file" #imageInput style="display: none" (change)="onImageSelected($event)">
     <button class="add-image" (click)="imageInput.click()">Add image</button>
@@ -12,12 +13,15 @@
 </div>
 
 <div class="notes" *ngFor="let note of notes">
-  <div class="text-notes" *ngIf="note.text">
-    <p>{{note.text}}</p>
+  <div class="content">
+    <div class="text-notes" *ngIf="note.text">
+      <p>{{note.text}}</p>
+    </div>
+    <div class="image-div" *ngIf="note.image">
+      <img class="image" [src]="note.image" alt="Note image">
+    </div>
   </div>
-  <div class="image-div" *ngIf="note.image">
-    <img class="image" [src]="note.image" alt="Note image">
-  </div>
+  
   <div class="additional-buttons">
     <div class="date">{{note.date.seconds*1000 | date}}</div>
     <button class="edit">Edit</button>
