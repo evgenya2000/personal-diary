@@ -8,8 +8,6 @@ import { getStorage, ref, uploadString, getDownloadURL } from '@angular/fire/sto
 export class SharedService {
   constructor(private readonly fs: Firestore) { }
 
-  // метод для взаимодействия с Firebase
-
   // получение всех записей из data store
   getNotes() {
     const notesCollection = collection(this.fs, 'notes'); // ссылка на коллекцию 'notes'
@@ -25,7 +23,6 @@ export class SharedService {
     }
 
     const data = { text: desc, date: Timestamp.now(), image: imageUrl }; // объект, который будет отправлен
-
     const notesCollection = collection(this.fs, 'notes');
     return addDoc(notesCollection, data);
   }

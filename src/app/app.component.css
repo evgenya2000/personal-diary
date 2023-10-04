@@ -42,6 +42,12 @@ textarea, textarea::placeholder, button {
     flex-grow:1;
 }
 
+.image-add {
+    width: 30%;
+    margin-right: 2%;
+    border-radius: var(--text-bor-radius); 
+}
+
 .add-image, .save {
     font-size: 200%;
     width: 100%;
@@ -51,6 +57,10 @@ textarea, textarea::placeholder, button {
 button {
     background-color: var(--main-bg-color);
     border-radius: var(--text-bor-radius);
+}
+
+button:active {
+    background-color: var(--main-bg-color-shadow);
 }
 
 .notes {
@@ -77,11 +87,11 @@ button {
     border-radius: var(--text-bor-radius);
     padding: 2%;
     width: 100%;
-    margin-right: 2%;
 }
 
 .image-div {
     border-radius: var(--text-bor-radius);
+    margin-left: 2%;
 }
 
 .image {
@@ -100,6 +110,7 @@ button {
 .additional-buttons {
     display: flex;
     justify-content: space-between;
+    margin-bottom: -1%;
 }
 
 .edit, .delete {

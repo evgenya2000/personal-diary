@@ -4,6 +4,7 @@
 
 <div class="add-note">
   <textarea #newNote placeholder="Text write here"></textarea> 
+  <img class="image-add" *ngIf="selectedImage" [src]="imageUrl">
   <div class="buttons">
     <input type="file" #imageInput style="display: none" (change)="onImageSelected($event)">
     <button class="add-image" (click)="imageInput.click()">Add image</button>
