@@ -91,7 +91,6 @@ button:active {
 
 .image-div {
     border-radius: var(--text-bor-radius);
-    margin-left: 2%;
 }
 
 .image {

@@ -17,6 +17,7 @@
     <div class="text-notes" *ngIf="note.text">
       <p>{{note.text}}</p>
     </div>
+    <div *ngIf="note.text && note.image" style="margin-left: 2%;"></div>
     <div class="image-div" *ngIf="note.image">
       <img class="image" [src]="note.image" alt="Note image">
     </div>
