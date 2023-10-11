@@ -3,7 +3,7 @@
 </div>
 
 <div class="add-note">
-  <textarea #newNote placeholder="Text write here"></textarea> 
+  <textarea class="text-add-note" #newNote placeholder="Text write here"></textarea> 
   <img class="image-add" *ngIf="selectedImage" [src]="imageUrl">
   <div class="buttons">
     <input type="file" #imageInput style="display: none" (change)="onImageSelected($event)">
@@ -25,9 +25,20 @@
   
   <div class="additional-buttons">
     <div class="date">{{note.date.seconds*1000 | date}}</div>
-    <button class="edit">Edit</button>
+    <button class="edit" (click)="openModal()">Edit</button>
     <button class="delete" (click)="deleteNotes(note.id)">Delete</button>
   </div>
-  
+</div>
 
+<div class="mask" [class.hidden]="!showModal" [style.visibility]="showModal ? 'visible' : 'hidden'"></div>
+
+<div class="modal-edit" [class.hidden]="!showModal" [style.visibility]="showModal ? 'visible' : 'hidden'">
+  <textarea class="text-edit" #newNote placeholder="Text write here"></textarea> 
+  <img class="image-add-edit" *ngIf="selectedImage" [src]="imageUrl">
+  <div class="buttons">
+    <input type="file" #imageInput style="display: none" (change)="onImageSelected($event)">
+    <button class="add-image-edit" (click)="imageInput.click()">Add image</button>
+    <button class="save-edit" (click)="addNotes(newNote.value, selectedImage)">Save</button>
+    <button class="cancel-edit" (click)="closeModal()">Cancel</button>
+  </div>
 </div>

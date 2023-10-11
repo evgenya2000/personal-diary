@@ -13,6 +13,8 @@ export class AppComponent {
   notes: any = [];
   selectedImage: File | null = null;
   imageUrl: any = null;
+  showModal: boolean = false;
+
 
   // метод обновления note array
   refreshNotes() {
@@ -65,4 +67,13 @@ export class AppComponent {
       }
     }
   }
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
 }
